@@ -5,9 +5,9 @@ This utility will watch a directory with raw hogan.js template files and
 compile them into corresponding vanilla js files.
 
 The templates will be available in the JST namespace and relative to the
-filepath of the raw template. For instance:
+filepath of the raw template. For instance: Let's say we created a template
+and saved it as `./templates/user/profile.js`:
 
-    // file: templates/user/profile.js
     <h1>{{ name }}</h1>
 
 Now all you need to do is include the compiled templates and use them
@@ -17,22 +17,30 @@ Now all you need to do is include the compiled templates and use them
       console.log(JST['user/profile'].r({name: "Daniel}));
     </script>
 
+Usage
+-----
+require('Hedgehog');
+Hedgehog.watch();
 
 Where do I put the raw template files?
 -------------------------------------
-It's up to you really, but by default hedgehog will look in a
-./templates directory.
-
+By default hedgehog will look in a `./templates` directory.
 
 Where are the compiled templates?
 ---------------------------------
-By default templates are compiled into ./templates/compiled
+By default hedgehog will compile templates into a `./templates/compiled` directory
 
+Configuration
+-------------
+Hedgehog.watch({
+  'in': 'path/to/raw/templates',
+  'out': 'path/to/compiled-templates/'
+});
 
 In production mode
 ------------------
-For a Rails project, I'd typically use Jammit to concatenate and minify
-the template files on deployment.
+For a Rails project, I'd typically use [Jammit](http://documentcloud.github.com/jammit/) 
+to concatenate and minify the template files on deployment.
 
-For Node.js + Express.js I'm using connect-assets wich is an asset pipeline
-inspired by Rails 3.1
+For a Express.js project I've tried [connect-assets](https://github.com/TrevorBurnham/connect-assets) with great success. It's an asset pipeline
+for node.js/connect.js inspired by Rails 3.1

@@ -19,8 +19,8 @@ Now all you need to do is include the compiled templates and use them
 
 Usage
 -----
-require('Hedgehog');
-Hedgehog.watch();
+    require('Hedgehog');
+    Hedgehog.watch();
 
 Where do I put the raw template files?
 -------------------------------------
@@ -32,10 +32,10 @@ By default hedgehog will compile templates into a `./templates/compiled` directo
 
 Configuration
 -------------
-Hedgehog.watch({
-  'in': 'path/to/raw/templates',
-  'out': 'path/to/compiled-templates/'
-});
+    Hedgehog.watch({
+      'in': 'path/to/raw/templates',
+      'out': 'path/to/compiled-templates/'
+    });
 
 In production mode
 ------------------

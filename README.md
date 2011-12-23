@@ -7,12 +7,12 @@ compile them into corresponding vanilla js files.
 The templates will be available in the JST namespace and relative to the
 filepath of the raw template. For instance:
 
-./templates/user/profile.js
+    // file: templates/user/profile.js
     <h1>{{ name }}</h1>
 
 Now all you need to do is include the compiled templates and use them
 
-    <script src="/templates/compiled/user/profile.js"></script>
+    <script src="templates/compiled/user/profile.js"></script>
     <script>
       console.log(JST['user/profile'].r({name: "Daniel}));
     </script>

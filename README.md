@@ -1,13 +1,13 @@
 Hedgehog - Watch and Compile hogan.js templates
 ===============================================
 
-This utility will watch a directory with raw hogan.js template files and
-compile them into corresponding vanilla js files.
+Hedgehog is a node.js utility script that will watch a directory with raw [hogan.js](http://twitter.github.com/hogan.js/) template
+files for changes and compile them into corresponding vanilla js files.
 
-The templates will be available in the JST namespace and relative to the
-filepath of the raw template.
-For instance: Let's say we created a template
-and saved it as `./templates/user/profile.js`:
+The templates will be available in a global JST namespace, relative to the
+filepath of the raw template file.
+For instance: Let's say we create a template
+and save it as `./templates/user/profile.mustache`:
 
 ```mustache
 <h1>{{ name }}</h1>
@@ -23,11 +23,15 @@ Now all you need to do is include the compiled templates and use them
 </script>
 ```
 
+Install
+-------
+npm install hedgehog
+
 Usage
 -----
 ```javascript
-require('Hedgehog');
-Hedgehog.watch();
+require('hedgehog');
+hedgehog.watch();
 ```
 
 Where do I put the raw template files?

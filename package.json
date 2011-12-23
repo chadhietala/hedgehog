@@ -1,0 +1,18 @@
+{
+  "name": "hedgehog",
+  "description": "Watch and Compile hogan.js templates",
+  "version": "0.0.1",
+  "homepage": "https://github.com/danielstocks/hedgehog",
+  "author": "Daniel Stocks <daniel@webcloud.se> (http://webcloud.se)",
+  "main": "lib/hedgehog.js",
+  "directories": {
+    "lib":"./lib"
+  },
+  "dependencies": {
+    "watch-tree": ">= 1.0.0"
+    "mkdirp": ">= 1.0.0"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}

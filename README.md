@@ -2,9 +2,11 @@ Hedgehog - Watch and Compile hogan.js templates
 ===============================================
 
 Hedgehog is a node.js utility script that will watch a directory with raw [hogan.js](http://twitter.github.com/hogan.js/) template
-files for changes and compile them into corresponding vanilla js files.
+files.
+It will listen for changes and compile the raw mustache templates into compiled vanilla js files.
 
-The templates will be available in a global JST namespace, relative to the
+The templates will be available in a global T namespace (this is
+configurable), relative to the
 filepath of the raw template file.
 For instance: Let's say we create a template
 and save it as `./templates/user/profile.mustache`:
@@ -13,27 +15,22 @@ and save it as `./templates/user/profile.mustache`:
 <h1>{{ name }}</h1>
 ```
 
-Now all you need to do is include the compiled templates and use them
+Now all you need to do is include the compiled templates along with the HoganTemplate (~700 bytes) lib.
 
 ```html
+<script src="HoganTemplate.js"></script>
 <script src="templates/compiled/user/profile.js"></script>
 <script>
-  var html = JST['user/profile'].r({name: "Daniel"});
+  var html = T['user/profile'].r({name: "Daniel"});
   // html == "<h1>Daniel</h1>"
 </script>
-```
-
-Install
--------
-```javascript
-npm install hedgehog
 ```
 
 Usage
 -----
 ```javascript
-require('hedgehog');
-hedgehog.watch();
+var Hedgehog = require('hedgehog');
+var h = new Hedgehog();
 ```
 
 Where do I put the raw template files?
@@ -47,12 +44,25 @@ By default hedgehog will compile templates into a `./templates/compiled` directo
 Configuration
 -------------
 
+You can configure hedgehog by passing an options object. For example:
+
 ```javascript
-Hedgehog.watch({
-  'in': 'path/to/raw/templates',
-  'out': 'path/to/compiled-templates/'
+new Hedh.watch({
+  'input_path': 'path/to/raw/templates',
 });
 ```
+
+### Available Options
+
+#### namespace | default: 'window.T'
+
+By default compiled templates will be accessible through the
+window.T object in the browser, you can set this to whatever you prefer.
+
+#### input_path | default: './templates'
+#### output_path | default: './templates/compiled'
+#### extension | default: '.mustache'
+
 
 In production mode
 ------------------

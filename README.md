@@ -25,7 +25,9 @@ Now all you need to do is include the compiled templates and use them
 
 Install
 -------
+```javascript
 npm install hedgehog
+```
 
 Usage
 -----

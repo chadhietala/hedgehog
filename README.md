@@ -28,6 +28,9 @@ Now all you need to do is include the compiled templates along with the HoganTem
 
 Usage
 -----
+
+You can run the hedgehog as standalone utility or with your existing node app:
+
 ```javascript
 var Hedgehog = require('hedgehog');
 var h = new Hedgehog();
@@ -52,7 +55,7 @@ new Hedh.watch({
 });
 ```
 
-### Available Options
+### Options
 
 #### namespace | default: 'window.T'
 

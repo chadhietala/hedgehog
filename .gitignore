@@ -1,2 +1,3 @@
 test/templates/compiled
 .DS_Store
+node_modules

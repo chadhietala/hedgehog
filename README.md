@@ -26,6 +26,18 @@ Now all you need to do is include the compiled templates along with the HoganTem
 </script>
 ```
 
+Installation
+------------
+
+`npm install hedgehog`
+
+to install it in your current working directory, or:
+
+`npm install hedgehog -g`
+
+to install it globally.
+
+
 Usage
 -----
 
@@ -43,6 +55,7 @@ By default hedgehog will look in a `./templates` directory.
 Where are the compiled templates?
 ---------------------------------
 By default hedgehog will compile templates into a `./templates/compiled` directory
+
 
 Configuration
 -------------
@@ -63,8 +76,19 @@ By default compiled templates will be accessible through the
 window.T object in the browser, you can set this to whatever you prefer.
 
 #### input_path | default: './templates'
+
+A path relative from where the script is called, that points to your raw
+.mustache templates.
+
 #### output_path | default: './templates/compiled'
+
+A path relative from where the script is called, that specifies where
+the the vanilla .js files should be compiled into.
+
 #### extension | default: '.mustache'
+
+Hogan.js compiles mustache templates, but you can use another file
+extension if you like.
 
 
 In production mode

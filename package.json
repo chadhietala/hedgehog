@@ -9,7 +9,8 @@
     "lib":"./lib"
   },
   "dependencies": {
-    "watch-tree": ">= 1.0.0"
+    "hogan-js": ">= 1.0.0",
+    "watch-tree": ">= 1.0.0",
     "mkdirp": ">= 1.0.0"
   },
   "engines": {

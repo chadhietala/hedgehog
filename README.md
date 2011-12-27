@@ -67,7 +67,7 @@ Configuration
 You can configure hedgehog by passing an options object. For example:
 
 ```javascript
-new Hedh.watch({
+new Hedgehog({
   'input_path': 'path/to/raw/templates',
 });
 ```

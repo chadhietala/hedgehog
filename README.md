@@ -37,6 +37,10 @@ to install it in your current working directory, or:
 
 to install it globally.
 
+### Dependencies
+
+Tested on node 0.6.x
+
 
 Usage
 -----

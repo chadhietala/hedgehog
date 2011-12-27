@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "hogan.js": ">= 1.0.0",
-    "watch-tree": ">= 0.1.1",
+    "watch-tree": "git+https://github.com/TrevorBurnham/node-watch-tree.git#node_06",
     "mkdirp": ">= 0.2.1"
   },
   "engines": {
